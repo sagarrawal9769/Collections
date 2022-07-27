@@ -4,9 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-      
+
         Program.List();
         Program.SortedList();
+        Program.Stack();
+        Program.Queue();
 
     }
     public static void List()
@@ -21,19 +23,26 @@ class Program
         listName.Add("Tisha");
         listName.Add("Riya");
 
+        Console.WriteLine("List:-");;
+
         foreach (var item in listName)
         {
             Console.WriteLine(item);
         }
 
-        var listName2 = new List<string>() { "Raj", "Rahul", "Nitin" };
+       
 
+        var listName2 = new List<string>() { "Raj", "Rahul", "Nitin" };
+        Console.WriteLine();
+        Console.WriteLine("List2:-");
         foreach (var item in listName2)
         {
             Console.WriteLine(item);
         }
 
         var listAge = new List<int>() { 50, 30, 40, 10, 18, 21, };
+        Console.WriteLine();
+        Console.WriteLine("List3:-");
         foreach (var item in listAge)
         {
             Console.WriteLine(item);
@@ -52,7 +61,8 @@ class Program
                         where s.Age > 21
                         where s.Name == "Eddie"
                         select s;
-
+        Console.WriteLine();
+        Console.WriteLine("List4:-");
         foreach (var student in studNames)
         {
             Console.WriteLine(student.Age + ", " + student.Name);
@@ -62,7 +72,8 @@ class Program
         numbers.Insert(0, 5);
         numbers.Remove(346);
         numbers.RemoveAt(1);
-       
+        Console.WriteLine();
+        Console.WriteLine("List4:-");
         foreach (var student in numbers)
         {
             Console.Write(student + " ");
@@ -93,9 +104,9 @@ class Program
         ageAndNames.Add(12, "Eleven");
         ageAndNames.Add(23, "Nancy");
         Console.WriteLine("--------Age and Names-----------");
-        foreach(var item in ageAndNames)
+        foreach (var item in ageAndNames)
         {
-            Console.WriteLine("Age:{0}, Name:{1}", item.Key,item.Value);
+            Console.WriteLine("Age:{0}, Name:{1}", item.Key, item.Value);
         }
 
         SortedList<string, string> cities = new SortedList<string, string>()
@@ -111,5 +122,73 @@ class Program
         {
             Console.WriteLine("City:{0}, Country:{1}", kvp.Key, kvp.Value);
         }
+        Console.WriteLine();
+    }
+    public static void Stack()
+    {
+        Console.WriteLine();
+        Console.WriteLine("------------------------------------------------");
+        Console.WriteLine();
+        Console.WriteLine("Stack()");
+        Console.WriteLine();
+        Stack<string> names = new Stack<string>();
+        names.Push("sagar");
+        names.Push("Raj");
+        names.Push("Tisha");
+        names.Push("Riya");
+        Console.WriteLine("List:-");
+        foreach (var item in names)
+        {
+            Console.WriteLine(item);
+        }
+        Console.WriteLine();
+        Console.WriteLine("Doing Pop:-");
+        Console.WriteLine();
+        Console.WriteLine("Peek Element: " + names.Peek());
+        Console.WriteLine("Pop Element: " + names.Pop());
+        Console.WriteLine("After Pop, Peek Element: " + names.Peek());
+       
+        Console.WriteLine();
+        Console.WriteLine("After Pop list:-");
+        foreach (var item in names)
+        {
+            Console.WriteLine(item);
+        }
+        Console.WriteLine();
+    }
+    public static void Queue()
+    {
+        Console.WriteLine();
+        Console.WriteLine("------------------------------------------------");
+        Console.WriteLine();
+        Console.WriteLine("Queue()");
+        Console.WriteLine();
+        Queue<string> names = new Queue<string>();
+        names.Enqueue("Tisha");
+        names.Enqueue("Sagar");
+        names.Enqueue("Raj");
+        names.Enqueue("Riya");
+        names.Enqueue("Rahul");
+
+        Console.WriteLine("List:-");
+
+        foreach (var item in names)
+        {
+            Console.WriteLine(item);
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Doing Dequeue:-");
+        Console.WriteLine("Peek Element: " + names.Peek());
+        Console.WriteLine("Dequeue Element; " + names.Dequeue());
+        Console.WriteLine("After Dequeue, Peek Element: " + names.Peek());
+        Console.WriteLine();
+        Console.WriteLine("After Dequeue list:-");
+        foreach(var item in names)
+        {
+            Console.WriteLine(item);
+        }
+        Console.WriteLine();
+
     }
 }
