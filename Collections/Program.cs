@@ -9,6 +9,8 @@ class Program
         Program.SortedList();
         Program.Stack();
         Program.Queue();
+        Program.LinkedList();
+        Program.Dictionary();
 
     }
     public static void List()
@@ -18,6 +20,8 @@ class Program
         Console.WriteLine();
         Console.WriteLine("List()");
         Console.WriteLine();
+
+
         var listName = new List<string>();
         listName.Add("Sagar");
         listName.Add("Tisha");
@@ -193,6 +197,57 @@ class Program
     }
     public static void LinkedList()
     {
+        Console.WriteLine();
+        Console.WriteLine("------------------------------------------------");
+        Console.WriteLine();
+        Console.WriteLine("LinkedList()");
+        Console.WriteLine();
+        var strangerThingsCharNames = new LinkedList<string>();
+        strangerThingsCharNames.AddLast("Billy");
+        strangerThingsCharNames.AddLast("Steve");
+        strangerThingsCharNames.AddLast("Eddie");
+        strangerThingsCharNames.AddLast("Dustin");
+        strangerThingsCharNames.AddLast("Mike");
+        strangerThingsCharNames.AddLast("Nancy");
+
+        Console.WriteLine("List:-");
+        foreach(var item in strangerThingsCharNames)
+        {
+            Console.WriteLine(item);
+        }
+        Console.WriteLine();
+        var node = strangerThingsCharNames.Find("Eddie");
+        strangerThingsCharNames.AddBefore(node, "Luna");
+        strangerThingsCharNames.AddAfter(node, "Lucas");
+        Console.WriteLine("After Adding Strings:-");
+        foreach (var item in strangerThingsCharNames)
+        {
+            Console.WriteLine(item);
+        }
+        Console.WriteLine();
+
+
+    }
+    public static void Dictionary()
+    {
+        Console.WriteLine();
+        Console.WriteLine("------------------------------------------------");
+        Console.WriteLine();
+        Console.WriteLine("Dictionary()");
+        Console.WriteLine();
+        var ageAndNames = new Dictionary<int, string>()
+        {
+            {21,"Eddie"},
+            {22, "Steve"},
+            {31, "Luna" },
+        };
+
+        Console.WriteLine();
+        Console.WriteLine("List:-");
+        foreach(KeyValuePair<int,string> item in ageAndNames)
+        {
+            Console.WriteLine(item.Key + " " + item.Value);
+        }
 
     }
 }
