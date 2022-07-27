@@ -96,7 +96,7 @@ class Program
         Console.WriteLine();
         Console.WriteLine("SortedList()");
         Console.WriteLine();
-        SortedList<int, string> ageAndNames = new SortedList<int, string>();
+        var ageAndNames = new SortedList<int, string>();
         ageAndNames.Add(29, "Billy");
         ageAndNames.Add(25, "Steve");
         ageAndNames.Add(26, "Eddie");
@@ -109,7 +109,7 @@ class Program
             Console.WriteLine("Age:{0}, Name:{1}", item.Key, item.Value);
         }
 
-        SortedList<string, string> cities = new SortedList<string, string>()
+        var cities = new SortedList<string, string>()
                                     {
                                         {"London", "UK"},
                                         {"New York", "USA"},
@@ -131,7 +131,7 @@ class Program
         Console.WriteLine();
         Console.WriteLine("Stack()");
         Console.WriteLine();
-        Stack<string> names = new Stack<string>();
+        var names = new Stack<string>();
         names.Push("sagar");
         names.Push("Raj");
         names.Push("Tisha");
@@ -163,7 +163,7 @@ class Program
         Console.WriteLine();
         Console.WriteLine("Queue()");
         Console.WriteLine();
-        Queue<string> names = new Queue<string>();
+        var names = new Queue<string>();
         names.Enqueue("Tisha");
         names.Enqueue("Sagar");
         names.Enqueue("Raj");
@@ -189,6 +189,10 @@ class Program
             Console.WriteLine(item);
         }
         Console.WriteLine();
+
+    }
+    public static void LinkedList()
+    {
 
     }
 }
